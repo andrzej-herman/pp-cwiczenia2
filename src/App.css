@@ -97,4 +97,22 @@ body {
     background-color: #fafafa;
 }
 
+.solution_image__folderquiz {
+    width: 350px;
+    height: auto;
+}
+
+.solution_image__folderquiz:hover {
+    transform:scale(1.05, 1.05);
+}
+
+.solution_image__diagram {
+    width: 600px;
+    height: auto;
+}
+
+.solution_image__diagram:hover {
+    transform:scale(1.05, 1.05);
+}
+
 
