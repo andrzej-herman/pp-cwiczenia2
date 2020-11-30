@@ -82,6 +82,27 @@ function Content() {
           </Row>
         </div>
       </Row>
+      <Row>
+        <div>
+          <Row className="software__container">
+            <ContentCard
+              title="10. Egzemplarze (instancje) klasy - cykl życia"
+              text="Dlaczego tworzymy i pracujemy na instancjach (egzemplarzach) klas?"
+              link="/instances"
+            />
+            <ContentCard
+              title="11. get , set - modyfikatory dostępu do właściwości klasy"
+              text="Jak pobrać wartość właściwości obiektu, a jak ją ustawić?"
+              link="/getset"
+            />
+            <ContentCard
+              title="12. Instrukcja warunkowa if ... else"
+              text="Jeden z podstawowych warunków logicznych. Wykonanie kodu pod warunkiem."
+              link="/if"
+            />
+          </Row>
+        </div>
+      </Row>
     </Fragment>
   );
 }

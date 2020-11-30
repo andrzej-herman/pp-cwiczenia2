@@ -10,6 +10,9 @@ import Thinking from "./pages/Thinking";
 import Objects from "./pages/Objects";
 import Properties from "./pages/Properties";
 import Methods from "./pages/Methods";
+import Instances from "./pages/Instances";
+import Getset from "./pages/Getset";
+import If from "./pages/If";
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
         <Route path="/objects" exact component={Objects} />
         <Route path="/properties" exact component={Properties} />
         <Route path="/methods" exact component={Methods} />
+        <Route path="/instances" exact component={Instances} />
+        <Route path="/getset" exact component={Getset} />
+        <Route path="/if" exact component={If} />
       </Switch>
     </Router>
   );

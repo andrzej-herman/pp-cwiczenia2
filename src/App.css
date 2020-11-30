@@ -32,16 +32,20 @@ body {
     color: #535355;
     margin-top: 20px;
     text-decoration: none;
+    transition: 450ms;
 }
 
 .content__card:hover {
     margin-left: 10px;;
     margin-right: 10px;
     color: #535355;
-    margin-top: 10px;
+    margin-top: 20px;
     text-decoration: none;
-    transform:scale(1.02, 1.02);
+    transform:scale(1.07, 1.07);
     background-color: whitesmoke;
+    -webkit-box-shadow: 10px 8px 23px -7px rgba(0,0,0,0.55);
+    -moz-box-shadow: 10px 8px 23px -7px rgba(0,0,0,0.55);
+    box-shadow: 10px 8px 23px -7px rgba(0,0,0,0.55);
 }
 
 
