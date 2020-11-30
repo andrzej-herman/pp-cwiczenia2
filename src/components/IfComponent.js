@@ -317,7 +317,7 @@ function IfComponent() {
               <br />
               <h5 style={{ marginBottom: 0 }}>Kod aplikacji konsolowej w C#</h5>
               <span style={{ marginTop: 5 }}>
-                Możesz sobie pobrać ten kod i wypróbować w swoim Visual Studio
+                Możecie sobie pobrać ten kod i wypróbować w swoim Visual Studio
               </span>
               <div style={{ marginTop: 5 }}>
                 <a href={pdf} target="_blank" rel="noopener noreferrer">

@@ -86,7 +86,7 @@ function Content() {
         <div>
           <Row className="software__container">
             <ContentCard
-              title="10. Egzemplarze (instancje) klasy - cykl życia"
+              title="10. Instancje (egzemplarze) klasy - cykl życia"
               text="Dlaczego tworzymy i pracujemy na instancjach (egzemplarzach) klas?"
               link="/instances"
             />

@@ -11,13 +11,17 @@ function InstancesComponent() {
           <Link to="/">Spis treści</Link>
         </Breadcrumb.Item>
         <Breadcrumb.Item active>
-          <Link to="/instances">Instancje klas (cykl życia)</Link>
+          <Link to="/instances">
+            Instancje (egzemplarze) klasy - cykl życia
+          </Link>
         </Breadcrumb.Item>
       </Breadcrumb>
 
       <Row className="content">
         <Col>
-          <h3 className="content__title">Instancje klas (cykl życia)</h3>
+          <h3 className="content__title">
+            Instancje (egzemplarze) klasy - cykl życia
+          </h3>
         </Col>
       </Row>
 
@@ -26,94 +30,152 @@ function InstancesComponent() {
           <Col>
             <div style={{ padding: 20, color: "#535355" }}>
               <p style={{ textAlign: "justify" }}>
-                Metody to - oprócz właściwości - druga składowa obiektów. Czy
-                obiekty muszą mieć metody? Oczywiście, że nie. W świecie
-                programowania zostało utworzonych wiele obiektów, które nie
-                posiadają żadnych metod. Jedynie właściwości. Typowym przykładem
-                takiego obiektu (klasy) jest klasa reprezentująca np: encję bazy
-                danych. To czy w naszym utworzonym obiekcie napiszemy jakąś
-                metodę, zależy tylko od tego jaki to jest obiekt i co chcemy
-                osiągnąć tworząc go. Weźmy zatem jako przykład nasz ulubiony
-                sklep internetowy. Klasa Produkt może zawierać jedynie
-                właściwości: nazwę, cenę, rozmiar itd, itp .... Ale na przykład
-                klasa Koszyk już niekoniecznie. Będzie ona zawierała właściwości
-                takie jak np: ilość produktów w koszyku, łączna cena do zapłaty
-                itd .. A jakie metody? Zastanówmy się chwilę. Po co jest w ogóle
-                koszyk w sklepie? Po co jest koszyk w aplikacji internetowej
-                typu np. Allegro? Jest po to, aby wkładać do niego produkty.
-                Także po to, aby na końcu można było policzyć ile ma zapłacić
-                Klient sklepu. Prawda? Pusty koszyk nic nam nie daje. Aby nie
-                był pusty, muszą być w nim produkty. Aby były w nim produkty,
-                trzeba je do niego włożyć. Naturalne zatem jest, że w klasie
-                Koszyk powinna znaleźć się metoda w o nazwie np: DodajProdukt.
-                Co ona będzie robiła? (pamiętajmy, że metoda musi "coś robić").
-                Ano, będzie dodawać produkt. Mówięc językiem bardziej fachowym,
-                będzie powiekszać listę produktów znajdujących się aktualnie w
-                koszyku.
+                Z rodziału 7 o obiektach (klasach) oraz z ćwiczeń, wiecie już,
+                że klasa jest pewnym wirtualnym wzorcem obiektu. Tworzymy ją,
+                nadajemy jej odpowiednie właściwości, aby stanowiła niejako
+                wzorzec dla egzemplarzy tej klasy, które będą "żyły" w pisanej
+                przez Nas aplikacji. W naszym programie nie występują same klasy
+                jako takie, tylko ich poszczzególne instancje (egzemplarze)
+                zbudowane na wzorcu klasy, którą reprezentują. Jeżeli piszemy
+                internetowy komis samochodowy, z pewnością napiszemy sobie klasę
+                o nazwie Samochod. Będzie ona posiadała szereg różnych
+                właściwości, takich jak marka, model, rok produkcji,
+                wyposażenie, cena ... itd. itp. Teraz wyobraźmy sobie, że
+                skończyliśmy pisać naszą apkę internetową i opublikowaliśmy
+                stronę "Internetowy komis samochodowy" w sieci.
                 <br /> <br />
-                Wiemy także, że metoda - oprócz tego, że "coś robi" - może
-                zwracać dodatkowo jakąś wartość. Może, ale nie musi. Gdy nie
-                zwraca, wówczas mówimy, że jest typu <strong>void</strong>. Taką
-                znaną już nam metodą jest metoda obiektu Console o nazwie
-                WriteLine(string text). Wyświetla on tekst na konsoli, ale nic
-                nie zwraca (jest typu void). I to wystarczy. Nie ma potrzeby,
-                żeby ona zwracała jakąś wartość. Natomiast zastanówmy się kiedy
-                jest potrzeba żeby metoda coś zwracała. Oczywiście wtedy, gdy
-                wynika to z naszego wyobrażenia co tej metody. Jak potrzebujemy,
-                żeby coś zwracała to piszemy ją tak, żeby zwracała. Załóżmy, że
-                piszemy metodę , która ma dodawać do siebie dwie liczby
-                całkowite x i y. Liczby te podajemy na wejściu (jako argumenty
-                tej metody). W środku niej jest niezwykle skomplikowany
-                algorytm: x + y. Skoro jej zadaniem jest dodawanie do siebie
-                dwóch liczb, to czy nie przydałoby się, aby zwracała jakąś
-                wartość? Co nam da to, że ona doda do siebie x i y i nie zwróci
-                wyniku? Odpowiedź jest oczywista: nic nam to nie da. Powinna
-                zwracać zatem wynik tego dodawania. tylko wtedy pisanie jej ma
-                sens.
+                Pierwsza osoba, która wejdzie na naszą stronę zobaczy, że nie ma
+                jeszcze żadnych samochodów do kupienia. Oczywicie, nie ma bo
+                nikt jeszcze nie dodał swojego samochodu do sprzedaży. My nie
+                sprzedajemy swoich samochodów na naszej stronie. Ma ona być
+                jedynie pośrednikiem między sprzedającymi a kupującymi. Są na
+                niej opcje: sprzedaj swój samochód oraz kup samochód. Teraz
+                następna osoba odwiedza naszą stronę. Mamy szczęście, akurat ona
+                nie jest zainteresowana kupnem samochodu, a chciałaby go
+                sprzedać. Widzi więc przycisk, sprzedaj swój samochód
+                (oczywiście przycisk, który sami wcześniej umieściliśmy w naszej
+                aplikacji). Naciska go i jego oczom ukazuje się formularz w
+                którego pola może wpisać cechy charakterystyczne pojazdu który
+                chce sprzedać czyli ... marka, model, rok produkcji, wyposażenie
+                oraz oczywiście cenę jaką chciałby uzyskać.
                 <br />
                 <br />
-                Teraz pomyślmy jaką wartość może zwracać metoda. Może zwracać
-                jakąś liczbę. Pewnie. Może zwracać tekst (string). Oczywiście.
-                Taką metodą zwracającą tekst jest również znana nam metoda
-                obiektu Console, ReadLine(). Zwraca ona tekst wpisany przez
-                Użytkownika. OK. Idźmy dalej. Czy metoda może zwracać wartość
-                typu bool (prawda lub fałsz)? Załóżmy, że piszemy dużą aplikację
-                internetową - serwis transakcyjny jakiegoś banku (notabene, to
-                był temat mojej pracy magisterskiej :)). Np. iPKO, czy mBanku.
-                Programujemy moduł zajmujący się przelewami. Musimy napisać
-                metodę, której zadaniem jest sprawdzenie, czy wpisany przez
-                Klienta numer konta bankowego jest poprawny. W środku tej metody
-                mamy algorytm sprawdzający cyfrę kontrolną numeru i na tej
-                podstawie wiemy, czy numer konta jest poprawny czy nie. Jaki typ
-                wartości powinna ta metoda zwrócić? Nas interesuje czy podany
-                numer konta jest poprawny czy nie. Oczywiście, że prawda lub
-                fałsz (czyli typ bool).
+                Zauważmy teraz fakt, że w kodzie naszej aplikacji np: w C# mamy
+                klasę Samochód (przecież sami ją sobie napisaliśmy). Natomisat
+                żaden egzemplarz tej klasy w tym momencie jeszcze nie istnieje
+                !!! Narazie komis jest pusty. Dopóki nasz Użytkownik - który
+                jest właśnie teraz na naszej stronie i chce sprzedać swój
+                samochód - nie doda za pomocą formularza swojego konkretnego
+                pojazdu do sprzedaży - ilość instancji klasy samochód jest równa
+                zero. W programowaniu obiektowym nie operujemy na samych klasach
+                - jedynie na ich instancjach (wyjątkiem są klasy typu static -
+                mówiliśmy o tym na zajęciach - ale to jest marginalna sprawa).
                 <br />
                 <br />
-                Wiemy już, że metoda może zwracać wiele typów wartości. A czy
-                może zwracać obiekt (klasę)? Wyobraźmy sobie, że gdzieś w naszej
-                aplikacji Quiz mamy metodę jak:
+                Teraz nasz sprzedający wypełnia formularz. Wpisuje w pola markę
+                swojego samochodu, jego model, rok produkcji, wyposażenie itd
+                ... oraz wpisuje cenę za jaką chce wystawić swój pojazd w naszym
+                internetowym komisie. Na końcu przyciska przygotowany przez Nas
+                wcześniej - we frontendzie naszej apki - przycisk - "Wystaw
+                samochód".
+                <br /> <br />
+                Co się teraz dzieje w naszej aplikacji? Teraz aplikacja wykrywa,
+                że użytkownik nacisnął nasz przycisk (jest wiele sposobów w
+                programowaniu na wykrywanie kliknięcia myszą, wpisywania teksu
+                na klawiaturze itd itp.. generalnie na wykrywanie aktywności
+                Użytkownika aplikacji. Zresztą jeden już znacie -
+                Console.ReadLine() - wykrywa co uzytkownik wpisał z klawiatury.)
+                Po wykryciu nacisnięcia tego przycisku zostaje wywołana metoda,
+                którą sobie sami wcześniej napisaliśmy o nazwie: ... powiedzmy
+                Wystaw_Samochod_Do_Sprzedazy. Z pewnością przyjmuje ona jako
+                argumenty wartości które zczytalismy z pól formularza
+                wypełnionego przed chwilą przez Sprzedającego. Co jest środku
+                tej metody? Na początku zapewne jakaś walidacja, czy Użytkownik
+                wypełnił pola formularza poprawnie (zapewne z wykorzystaniem
+                instrukcji warunkowej if => patrz{` `}
+                <Link to="/if">rodział nr 12</Link>). Następnie - gdy wszystko
+                jest ok - metoda tworzy pierwszy egzemplarz klasy Samochód w
+                naszej aplikacji. Zauważmy, do tej pory żadnego nie było. Była
+                klasa Samochód, ale nie było żadnej jej instancji !!! Załóżmy,
+                że nasz sprzedający wpisał w pola formularza takie wartości:
+              </p>
+              <div>
+                <ul>
+                  <li>Marka: Audi</li>
+                  <li>Model: A6</li>
+                  <li>Rok produkcji: 2012</li>
+                  <li>Cena: 60 000 PLN</li>
+                </ul>
+              </div>
+              <p>
+                Jaki będzie dalej kod w naszej metodzie
+                Wystaw_Samochod_Do_Sprzedazy? Będzie taki:
                 <br />
                 <br />
                 <code>
-                  public Pytanie WylosujPytanie() <br />
+                  Samochod samochodKlienta = new Samochod <br />
                   {"{"} <br />
-                  &nbsp;&nbsp;&nbsp;// algorytm losujący pytanie
+                  &nbsp;&nbsp;&nbsp;
+                  {`Marka = "Audi"`}
                   <br />
-                  {"}"}
+                  &nbsp;&nbsp;&nbsp;
+                  {`Model = "A6"`}
+                  <br />
+                  &nbsp;&nbsp;&nbsp;
+                  {`RokProdukcji = 2012`}
+                  <br />
+                  &nbsp;&nbsp;&nbsp;
+                  {`Cena = 60000`}
+                  &nbsp;&nbsp;&nbsp;
+                  <br />
+                  {"};"}
                 </code>
-                <br /> <br />
-                Jest ona źle napisana. Brakuje w niej w środku co najmniej
-                jednej podstawowej rzeczy. Zresztą Visual Studio pokazałoby Nam
-                błąd. Ale to teraz dla Nas nieistotne. Ważne jest to co zwraca
-                ta metoda. Jaką zwraca wartość. Skoro nazywa się WylosujPytanie,
-                może powinna zwracać właśnie Pytanie?
+                <br />
+                <br />
+                Dopiero teraz - po użyciu instrukcji{" "}
                 <strong>
-                  {" "}
-                  Dokładnie !!! Zwraca ona ten wylosowany egzemplarz obiektu
-                  Pytanie. Jest to bardzo ważne. Metody mogą zwracać absolutnie
-                  wszystko. To co chcemy !!!.
-                </strong>
+                  Samochod samochodKlienta ={" "}
+                  <span style={{ color: "#ff0000" }}>new</span> Samochod
+                </strong>{" "}
+                powstaje egzemplarz naszej klasy samochod. Przed uzyciem słowa
+                kluczowego <strong>new</strong> zmienna o nazwie samochodKlienta
+                przyjmowała wartość <strong>null</strong>. Ten egzemplarz
+                obiektu samochód jeszcze nie istniał.
+                <br />
+                <br />W tym momencie nasza pierwsza instancja klasy Samochód
+                rozpoczęła swój cykl życia. W profesjonalnej aplikacji zapewne
+                zapisalibyśmy informacje o tym konkretnym egzemplarzu samochodu
+                do bazy danych, aby potem móc prezentować go np.: na stronie
+                głównej naszego serwisu w ofertach do sprzedaży. Teraz także
+                możemy manipulować wartościami jej właściwości. Bo ten
+                egzamplarz już istnieje. Jeżeli nasz Użytkownik nie sprzeda
+                samochodu przez - dajmy na to - trzy miesiące i uzna, że musi
+                obnizyć cenę sprzedaży, to dajemy mu (oczwiście wcześniej przez
+                Nas przygorowaną) metodę Zmien_Cene_Sprzedazy. W niej wykonamy
+                ponowne ustawienie właściwości Cena tego konkretnego pojazdu
+                (instancji) na inną (zapewne niższą - taką jaką zażyczy sobie
+                sprzedający) wartość.
+                <br />
+                <br />
+                No dobrze. A kiedy ten konkretny egzemplarz klasy samochod
+                kończy swój żywot w naszej aplikacji? Odpowiedź brzmi: wtedy
+                kiedy będziemy tego chcieli. To my napisalismy ten program i my
+                o tym decydujemy. Może to być np. w momencie gdy ten samochód
+                zostanie sprzedany (tzn. inny Użytkownik naszego serwisu -
+                zainteresowany kupnem - kupi go). Ale niekoniecznie, bo możemy
+                na przykład chcieć (wszystko zależy od tego jak zaplanowaliśmy
+                sobie nasz program) aby w naszym programie była jakaś historia
+                transakcji. Wówczas ten konkretny egzemplarz będzie istniał cały
+                czas. Nie będziemy go już co prawda wystawiać do sprzedaży (bo
+                przecież już został sprzedany), ale na przykład będziemy go
+                uwzględniać w raportach z historii transakcji.
+                <br />
+                <br />A co zrobić gdy jednak chcemy zakończyć żywot w naszym
+                programie tego konkretnego egzemplarza klasy Samochod? Jak
+                dokonać jego żywota? Wystarczy jedna linijka kodu:
+                <br />
+                <br />
+                <code>samochodKlienta = null;</code>
               </p>
             </div>
           </Col>
