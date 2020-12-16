@@ -103,6 +103,27 @@ function Content() {
           </Row>
         </div>
       </Row>
+      <Row>
+        <div>
+          <Row className="software__container">
+            <ContentCard
+              title="13. Konstruktor klasy"
+              text="Do czego może przydać się Nam konstruktor klasy?"
+              link="/constructor"
+            />
+            <ContentCard
+              title="14. Lista - potężne narzędzie C#"
+              text="Jedna z przedstawicieli kolekcji w języku C#"
+              link="/list"
+            />
+            <ContentCard
+              title="15. Pętla for i foreach"
+              text="Jedne z najczęściej używanych konstrukcji w programowaniu"
+              link="/loop"
+            />
+          </Row>
+        </div>
+      </Row>
     </Fragment>
   );
 }

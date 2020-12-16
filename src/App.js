@@ -14,6 +14,10 @@ import Instances from "./pages/Instances";
 import Getset from "./pages/Getset";
 import If from "./pages/If";
 
+import ConstructorPage from "./pages/ConstructorPage";
+import ListPage from "./pages/ListPage";
+import LoopPage from "./pages/LoopPage";
+
 function App() {
   return (
     <Router>
@@ -31,6 +35,9 @@ function App() {
         <Route path="/instances" exact component={Instances} />
         <Route path="/getset" exact component={Getset} />
         <Route path="/if" exact component={If} />
+        <Route path="/constructor" exact component={ConstructorPage} />
+        <Route path="/list" exact component={ListPage} />
+        <Route path="/loop" exact component={LoopPage} />
       </Switch>
     </Router>
   );
